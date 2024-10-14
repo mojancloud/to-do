@@ -12,39 +12,34 @@
                         @update-subject="updateSubject(x, $event)" />
                     <div class="flex flex-row gap-1">
                         <div class="flex flex-row mx-1">
-                            <div class="relative group">
-                                <button class="w-8 h-8 bg-red-300 rounded-full mx-0.5" v-if="!x.isEdit"
+                            <div class="relative group" v-if="!x.isEdit">
+                                <button class="w-8 h-8 bg-red-300 rounded-full mx-0.5" 
                                     @click="completeItem(x)">✔️</button>
                                 <Tooltip
-                                    class="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-1 w-max px-2 py-1 text-xs text-white bg-gray-700 rounded opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"
                                     tooltip="علامت گذاری به عنوان انجام شده" />
                             </div>
-                            <div class="relative group">
-                                <button class="w-8 h-8 bg-red-300 rounded-full mx-0.5" v-if="!x.isEdit"
+                            <div class="relative group" v-if="!x.isEdit">
+                                <button class="w-8 h-8 bg-red-300 rounded-full mx-0.5" 
                                     @click="editItem(x)">✍️</button>
                                 <Tooltip
-                                    class="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-1 w-max px-2 py-1 text-xs text-white bg-gray-700 rounded opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"
                                     tooltip="ویرایش" />
                             </div>
-                            <div class="relative group">
-                                <button class="w-8 h-8 bg-red-300 rounded-full mx-0.5" v-if="!x.isEdit"
+                            <div class="relative group" v-if="!x.isEdit">
+                                <button class="w-8 h-8 bg-red-300 rounded-full mx-0.5" 
                                     @click="removeItem(x.id)">🗑️</button>
                                 <Tooltip
-                                    class="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-1 w-max px-2 py-1 text-xs text-white bg-gray-700 rounded opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"
                                     tooltip="حذف" />
                             </div>
-                            <div class="relative group">
-                                <button class="w-8 h-8 bg-red-300 rounded-full mx-0.5" v-if="x.isEdit"
+                            <div class="relative group" v-if="x.isEdit">
+                                <button class="w-8 h-8 bg-red-300 rounded-full mx-0.5"
                                     @click="cancelEdit(x)">❌</button>
                                 <Tooltip
-                                    class="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-1 w-max px-2 py-1 text-xs text-white bg-gray-700 rounded opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"
                                     tooltip="لغو ویرایش" />
                             </div>
-                            <div class="relative group">
-                                <button class="w-8 h-8 bg-red-300 rounded-full mx-0.5" v-if="x.isEdit"
+                            <div class="relative group" v-if="x.isEdit">
+                                <button class="w-8 h-8 bg-red-300 rounded-full mx-0.5" 
                                     @click="confirmEdit(x)">✅</button>
                                 <Tooltip
-                                    class="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-1 w-max px-2 py-1 text-xs text-white bg-gray-700 rounded opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"
                                     tooltip="تایید ویرایش" />
                             </div>
                         </div>
@@ -63,11 +58,10 @@
                     <TodoItem :subject="x.subject" :isEdit="x.isEdit" :isConfirmEdit="x.isConfirmEdit"
                         @update-subject="updateSubject(x, $event)" />
                     <div class="mx-1">
-                        <div class="relative group">
-                            <button class="w-8 h-8 bg-red-300 rounded-full mx-0.5" v-if="!x.isEdit"
+                        <div class="relative group" v-if="!x.isEdit">
+                            <button class="w-8 h-8 bg-red-300 rounded-full mx-0.5" 
                                 @click="removeItem(x.id)">🗑️</button>
                             <Tooltip
-                                class="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-1 w-max px-2 py-1 text-xs text-white bg-gray-700 rounded opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"
                                 tooltip="حذف" />
                         </div>
                     </div>
